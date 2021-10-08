@@ -56,7 +56,7 @@ const actualizeEvent = async (req,res= response)=>{
         if(!eventDB)
         {
             return res.status(404).json({
-                ok:true,
+                ok:false,
                 msg: 'there is no event Whit this id'
             })
         }
@@ -64,7 +64,7 @@ const actualizeEvent = async (req,res= response)=>{
         if(eventDB.user.toString() !== uid)
         {
             return res.status(401).json({
-                ok:true,
+                ok:false,
                 msg: 'You dont have license to edit this event'
             })
         }
@@ -103,7 +103,7 @@ const deleteEvent = async (req,res= response)=>{
         if(!eventDB)
         {
             return res.status(404).json({
-                ok:true,
+                ok:false,
                 msg: 'there is no event Whit this id'
             })
         }
@@ -111,7 +111,7 @@ const deleteEvent = async (req,res= response)=>{
         if(eventDB.user.toString() !== uid)
         {
             return res.status(401).json({
-                ok:true,
+                ok:false,
                 msg: 'You dont have license to delete this event'
             })
         }
