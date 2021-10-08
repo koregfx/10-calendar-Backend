@@ -101,7 +101,11 @@ const renewToken = async(req,res = response)=>{
     res.json({
         ok: true,
         type_of_request: 'renew',
-        token
+        token,
+        user:{
+            uid: req.uid,
+            name: req.name
+        },
     })
 }
 
